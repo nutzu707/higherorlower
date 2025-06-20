@@ -33,7 +33,7 @@ function getRandomPair(prices: PriceItem[]): [PriceItem, PriceItem] {
     if (closePairs.length > 0) return randElem(closePairs);
   }
   // Otherwise, pick two random distinct
-  let idx1 = randInt(prices.length);
+  const idx1 = randInt(prices.length);
   let idx2 = idx1;
   while (idx2 === idx1) {
     idx2 = randInt(prices.length);
