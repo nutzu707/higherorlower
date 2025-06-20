@@ -8,7 +8,7 @@ type PriceItem = {
 
 function getRandomPair(prices: PriceItem[]): [PriceItem, PriceItem] {
   if (prices.length < 2) throw new Error("Need at least 2 items");
-  let idx1 = Math.floor(Math.random() * prices.length);
+  const idx1 = Math.floor(Math.random() * prices.length);
   let idx2 = idx1;
   while (idx2 === idx1) {
     idx2 = Math.floor(Math.random() * prices.length);
@@ -65,6 +65,7 @@ export default function HigherOrLower() {
   const [prices, setPrices] = useState<PriceItem[]>([]);
   const [pair, setPair] = useState<[PriceItem, PriceItem] | null>(null);
   const [gameOver, setGameOver] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [correct, setCorrect] = useState(false);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<"left" | "right" | null>(null);
